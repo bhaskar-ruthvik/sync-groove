@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:sync_groovy/screens/greeting_page.dart';
 import 'package:sync_groovy/widgets/main_drawer.dart';
 
 void main(){

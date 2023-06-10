@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:sync_groovy/screens/greeting_page.dart';
+import 'package:sync_groovy/widgets/main_drawer.dart';
 
 void main(){
   runApp(MyApp());
@@ -16,7 +17,7 @@ class MyApp extends StatelessWidget{
         useMaterial3: true,
         colorScheme: ColorScheme.fromSeed(
           brightness: Brightness.dark,
-          seedColor: const Color.fromARGB(0, 85, 254, 141),
+          seedColor: Color.fromARGB(178, 85, 254, 141),
           background: Colors.black
         ),
         textTheme: GoogleFonts.montserratTextTheme().copyWith(
@@ -25,12 +26,20 @@ class MyApp extends StatelessWidget{
             fontWeight: FontWeight.bold,
             color: Colors.white,
           ),
+        ),
+        bottomNavigationBarTheme: BottomNavigationBarThemeData(
+          backgroundColor: Color.fromARGB(253, 24, 24, 202),
+          selectedItemColor: Color.fromARGB(255, 220, 245, 240),
+          unselectedItemColor: Colors.white,
+          selectedIconTheme: IconThemeData(
+            color: Color.fromARGB(255, 30, 233, 196)
+          ),
         )
         ,
         scaffoldBackgroundColor: Colors.black,
       ),
     
-      home: GreetingScreen(),
+      home: MainDrawer(),
   
     );
   }

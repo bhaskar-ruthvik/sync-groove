@@ -1,4 +1,4 @@
-# sync_groovy
+# sync_groove
 
 A new Flutter project.
 

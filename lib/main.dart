@@ -1,8 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:sync_groovy/widgets/main_drawer.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
+import 'providers/spotify_token_provider.dart';
+import 'providers/popular_movies_provider.dart';
 
-void main(){
+
+
+Future main() async {
+  await dotenv.load(fileName: ".env");
+  AUTH_TOKEN = await get_token();
+  POPULAR_MOVIES_LIST = await getMovies();
   runApp(MyApp());
 }
 
@@ -27,15 +35,20 @@ class MyApp extends StatelessWidget{
           ),
         ),
         bottomNavigationBarTheme: BottomNavigationBarThemeData(
-          backgroundColor: Color.fromARGB(253, 24, 24, 202),
+          elevation: 30.0,
+          backgroundColor: Color.fromARGB(102, 2, 35, 118),
           selectedItemColor: Color.fromARGB(255, 220, 245, 240),
           unselectedItemColor: Colors.white,
-          selectedIconTheme: IconThemeData(
-            color: Color.fromARGB(255, 30, 233, 196)
-          ),
+          // selectedIconTheme: IconThemeData(
+          //   color: Color.fromARGB(255, 30, 233, 196)
+          // ),
         )
         ,
         scaffoldBackgroundColor: Colors.black,
+        searchBarTheme: SearchBarThemeData(
+          backgroundColor: MaterialStatePropertyAll( Color.fromARGB(93, 1, 24, 84),)
+          //Color.fromARGB(172, 4, 30, 97)
+        )
       ),
     
       home: MainDrawer(),
